@@ -1,0 +1,19 @@
+# Custom ByteTrack settings (Ultralytics reads this file directly).
+# track_buffer: how many frames a lost track is kept alive, hoping it
+#   reappears, before its ID is dropped for good. Raised from the
+#   Ultralytics default of 30 -> 60 (2 seconds at 30fps) because
+#   broadcast football has frequent short occlusions (players
+#   crossing/piling up) that were causing ID switches -- which is what
+#   produced the bogus "534 km/h" speed reading (two different players
+#   getting merged under one ID for a frame).
+# match_thresh: how similar a new detection must be to an existing
+#   track to be considered "the same player". Kept at the accurate
+#   default; raising it further would cause more missed matches
+#   (new IDs created too often) rather than fewer ID switches.
+tracker_type: bytetrack
+track_high_thresh: 0.5
+track_low_thresh: 0.1
+new_track_thresh: 0.6
+track_buffer: 60
+match_thresh: 0.80
+fuse_score: true

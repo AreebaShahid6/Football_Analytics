@@ -1,0 +1,35 @@
+# Virtual environment
+venv/
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# Videos
+videos/
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# YOLO / ML model weights
+*.pt
+*.pth
+*.onnx
+
+# Training outputs
+runs/
+outputs/
+output/
+results/
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Environment/secrets
+.env
